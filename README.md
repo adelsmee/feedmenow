@@ -17,4 +17,3 @@ Fork and enjoy!
  - Create secretes.yml with newrelic license key
  - `bundle install && rackup`
  - Tweak, push & `cap deploy`
-

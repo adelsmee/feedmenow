@@ -1,4 +1,3 @@
-require 'new_relic/recipes'
 require "bundler/capistrano"
 require 'yaml'
 require './app/lib/environment_initializer'
@@ -26,6 +25,6 @@ server site_config['app_server'], :app, :web, :db, :primary => true
   require File.expand_path("../deploy/#{f}", __FILE__)
 end
 
-after "deploy:update", "deploy:assets:compile", "newrelic:notice_deployment"
+after "deploy:update", "deploy:assets:compile"
 
 before('deploy:finalize_update', :chef)

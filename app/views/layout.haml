@@ -1,23 +1,63 @@
 !!! 5
 %html
   %head
-    = NewRelic::Agent.browser_timing_header rescue ""
     %title= @site_config["title"]
     %meta{:name => "viewport", :content => "width=device-width; initial-scale=1.0; maximum-scale=1.0;"}
     %link{rel: 'stylesheet', href: asset_path('vendor.css'), type: 'text/css'}
     %link{rel: 'stylesheet', href: asset_path('application.css'), type: 'text/css'}
   %body
     #content
-      .container
-        .row-fluid
-          .span3
-            .well.sidebar-nav
-              %ul.nav.nav-list
-                %li.nav-header
-                  Links
-                %li.linked_in
-                  %a{:href => "#", :target => "_blank"} Go here
-          .span9
-            = yield
+      .banner.row
+        .banner-logo.span
+          %img{src: asset_path('feed-me-now.png'), class: 'banner-logo'}
+        .banner-filter.span6.offset
+          %form{name: 'filter', id: 'filter', action: '/filter', method: 'post'}
+            %fieldset
+              %table.table.table-striped.filter-table
+                %tr
+                  %td
+                    %label.checkbox
+                      %input{type: 'checkbox', name: 'cheap'}
+                      Cheap Feed
+                  %td
+                    %label.checkbox
+                      %input{type: 'checkbox', name: 'close'}
+                      Close Feed
+                  %td
+                    %label.checkbox
+                      %input{type: 'checkbox', name: 'close'}
+                      Top Feed
+                %tr
+                  %td
+                    %label.checkbox
+                      %input{type: 'checkbox', name: 'cheap'}
+                      Vegetarian Feed
+                  %td
+                    %label.checkbox
+                      %input{type: 'checkbox', name: 'close'}
+                      Feed the Kids
+                  %td
+                    %label.checkbox
+                      %input{type: 'checkbox', name: 'close'}
+                      Enviro-Friendly Feed
+                %tr
+                  %td
+                    %label.checkbox
+                      %input{type: 'checkbox', name: 'cheap'}
+                      A Feed with Wi-fi
+                  %td
+                    %label.checkbox
+                      %input{type: 'checkbox', name: 'close'}
+                      Non-Smoking Feed
+                  %td
+                    %label.checkbox
+                      %input{type: 'checkbox', name: 'close'}
+                      GLAD Feed
+                / %tr
+                /   %td{colspan: 2}
+                /     %button{type: 'submit'} Wot to Eat
+      .row
+        = yield
 
-  = NewRelic::Agent.browser_timing_footer rescue ""
+    %script{type: 'text/javascript', src: asset_path('vendor.js')}
+    %script{type: 'text/javascript', src: asset_path('application.js')}

@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'sinatra'
 gem 'sinatra-contrib'
@@ -8,4 +8,4 @@ gem 'sass'
 gem 'capistrano'
 gem 'sprockets'
 gem 'unicorn'
-gem 'newrelic_rpm'
+gem 'coffee-script'

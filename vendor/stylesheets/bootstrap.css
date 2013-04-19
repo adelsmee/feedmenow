@@ -674,6 +674,14 @@ cite {
   font-style: normal;
 }
 
+.excited {
+  color: #999999;
+}
+
+a.excited:hover {
+  color: #808080;
+}
+
 .muted {
   color: #999999;
 }
