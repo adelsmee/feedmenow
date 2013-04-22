@@ -6,7 +6,7 @@ log
 REVISION
 public/system
 public/assets
-config/secretes.yml
+config/sensitive_config.yml
 .powder
 .rvmrc
 .powrc

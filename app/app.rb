@@ -3,7 +3,7 @@ require 'net/http'
 require 'net/https'
 
 class App < Base
-  ATLAS_API_KEY = '217716eb27a13ba93896a9252d0d4c14'
+  ATLAS_API_KEY = @sensitive_config['devint-api-key']
 
   get '/' do
     pois_request = Net::HTTP::Get.new(pois_path, {'API-Key' => ATLAS_API_KEY})

@@ -1,19 +1,7 @@
-Basic Sinatra template
+Feed Me Now
 ====
 
-**Inlcudes**
+To get working you'll need to create the file config/sensitive_config.yml and add the following sensitive data to it in this format:
 
-- NewRelic
-- Capistrano
-- Chef-solo
-- Sprockets / Asset-pipeline
-- Twitter Bootstrap
-- SASS
-- HAML
-
-Fork and enjoy!
-
- - Update site_config.yml
- - Create secretes.yml with newrelic license key
- - `bundle install && rackup`
- - Tweak, push & `cap deploy`
+sensitive:
+  devint-api-key: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx'

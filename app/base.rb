@@ -10,6 +10,7 @@ class Base < Sinatra::Base
   set :root, File.expand_path('../../', __FILE__)
 
   config_file File.join(root, 'config/site_config.yml')
+  sensitive_config_file File.join(root, 'config/sensitive_config.yml')
 
   set :sprockets, Sprockets::Environment.new(root)
   set :precompile, [ /\w+\.(?!js|css).+/, /(application|vendor).(css|js)$/ ]
@@ -35,6 +36,7 @@ class Base < Sinatra::Base
 
   before do
     @site_config = settings.site
+    @sensitive_config = settings.sensitive
   end
 
   get '/404' do
